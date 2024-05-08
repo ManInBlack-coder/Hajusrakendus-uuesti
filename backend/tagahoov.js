@@ -18,7 +18,6 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'qwerty',
-    //database: 'signup',   
     database: 'Log_In'
 })
 
@@ -69,7 +68,7 @@ app.post('/signup', (req,res) => {
 
 app.post('/login', (req,res) => {
     //const sql = "INSERT INTO Login ('name','email','password') VALUES(?)";
-    const sql = "SELECT * FROM Login_data WHERE Gmail = ? AND Parool = ?";
+    const sql = "SELECT Nimi,Gmail,Parool FROM Login_data WHERE Gmail = ? AND Parool = ?";
     console.log(req.body)
     
 
@@ -98,6 +97,12 @@ app.post('/login', (req,res) => {
         }
     })
 })
+
+
+
+
+
+
 
 
 
